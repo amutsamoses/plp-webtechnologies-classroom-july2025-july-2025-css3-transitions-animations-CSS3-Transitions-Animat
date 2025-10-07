@@ -1,0 +1,101 @@
+/* General Styling */
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f4f8;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 90%;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* --------------------------------------------------------
+   Part 1: CSS3 Transitions and Animations
+   -------------------------------------------------------- */
+
+/* Button Styling with Transition */
+#trigger-animation-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  /* Smooth transition for background color and shadow */
+  transition: background-color 0.3s ease, transform 0.1s ease,
+    box-shadow 0.3s ease;
+}
+
+#trigger-animation-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+#trigger-animation-btn:active {
+  /* Subtle press effect */
+  transform: translateY(1px);
+}
+
+/* Animated Box Base Styling */
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: #f7b731;
+  margin: 30px auto;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Ensure transform property is set up for smooth transitions */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Define the Keyframe Animation: Bouncing Effect */
+@keyframes bounce-animation {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0); /* Start and end positions */
+  }
+  40% {
+    transform: translateY(-30px); /* Highest point */
+  }
+  60% {
+    transform: translateY(-15px); /* Middle bounce */
+  }
+}
+
+/* This class is added/removed by JavaScript (Part 3) */
+.bounce {
+  /* Apply the keyframe animation */
+  animation: bounce-animation 1s ease-in-out;
+}
+
+/* Visual change to show animation completion (triggered by JS after animation ends) */
+.animated {
+  background-color: #20c997;
+  color: white;
+  transform: scale(1.05);
+}
